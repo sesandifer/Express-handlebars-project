@@ -1,0 +1,36 @@
+<div id="navbar">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Award.ly<img src="../images/icon.jpg" height="40" width="40"/></a>
+        <ul class="navbar-nav mr-auto">
+            {{#if user}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/awards/{{user.id}}">My Awards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/nominate">Nominate</a>
+                </li>
+                {{#if user.isAdmin}}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Admin</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/companyStatistics">Reports</a>
+                            <a class="dropdown-item" href="/users">Manage Users</a>
+                            <a class="dropdown-item" href="/awards">Manage Awards</a>
+                        </div>
+                    </li>
+                {{/if}}
+            {{/if}}
+        </ul>
+        <div class="d-inline p-1">
+            {{#if user}}
+                <a class="btn btn-danger" href="/logout" role="button"> Logout </a>
+            {{else}}
+                <a class="btn btn-primary"  href="/login" role="button">Login</a>
+                <a class="btn btn-success"  href="/register" role="button">Register</a>
+            {{/if}}
+        </div>
+    </nav>
+</div>

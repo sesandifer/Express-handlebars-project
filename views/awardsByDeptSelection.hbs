@@ -1,0 +1,58 @@
+<main role="main" class="container">
+	<div id="navbar">
+		<ul class="navbar-nav mr-auto">
+			 <lh><h2>Reports: Awards by Department</h2></lh>
+			 <li class="nav-item dropdown">
+				<a class="nav-link btn-lg dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Select Report</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/companyStatistics">Main</a>
+					<a class="dropdown-item" href="/awardCountsByDept">Award Counts By Department</a>
+					<a class="dropdown-item" href="/awardCountsByRegion">Award Counts By Region</a>
+					<a class="dropdown-item" href="/awardsByDeptSelection">Awards Based On Department Selection</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	<div>
+		<h3>Display All Awards For Selected Department:</h3>
+		<br>
+		<form action="/awardsByDeptSelection" method="post">
+			<div class="float-left">
+				<div class="form-group col-sm">
+					<select id="department" name="department">
+						<option disabled="disabled" selected="selected"> Select A Department </option>
+						<option value="1"> Production </option>
+						<option value="2"> Purchasing </option>
+						<option value="3"> Accounting </option>
+						<option value="4"> Development </option>
+						<option value="5"> Marketing </option>
+						<option value="6"> Logistics </option>
+					</select>
+					<button class="btn btn-primary btn-sm" type="submit"> Submit </button>
+				</div>
+			</div>
+		</form>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Department</th>
+					<th scope="col">Name</th>
+					<th scope="col">Award</th>
+					<th scope="col">Created On</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each stats}}
+					<tr>
+						<th>{{deptname}}</th>
+						<th>{{firstname}} {{lastname}}</th>
+						<th>{{title}}</th>
+						<th>{{created_on}}</th>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</main>

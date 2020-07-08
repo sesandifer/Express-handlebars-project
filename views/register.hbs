@@ -1,0 +1,59 @@
+<main role="main" class="container">
+	<div class="row justify-content-center">
+		<h2>Please fill in the following fields in order to register</h2>
+	</div>
+	<br>
+	<form action="/register" method="post">
+		<div class="row">
+			<div class="col">
+				<label>First Name</label>
+				<input type="text" class="form-control col-sm" name="firstName" placeholder="ex. John"/>
+			</div>
+			<div class="col">
+				<label>Last Name</label>
+				<input type="text" class="form-control col-sm" name="lastName" placeholder="ex. Appleseed"/>
+			</div>
+			<div class="col">
+				<label>Email</label>
+				<input type="email" class="form-control" name="email" placeholder="ex. John_Appleseed@appleseed.com"/>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col">
+				<label>Username</label>
+				<input type="text" class="form-control" name="username" placeholder="ex. JohnnyTheSeed"/>
+			</div>
+			<div class="col">
+				<label>Password</label>
+				<input type="password" class="form-control" name="password"/>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="form-group col-sm">
+				<label for="accountType"> Account Type:</label>
+				<select id="accountType" name="accountType" class="form-control">
+					<option selected value="1"> User </option>
+					<option value="2"> Admin </option>
+				</select>
+				</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-sm">
+				<label for="department"> Department:</label>
+				<select id="department" name="department" class="form-control">
+					<option selected value="1"> Production </option>
+					<option value="2"> Purchasing </option>
+					<option value="3"> Accounting </option>
+				</select>
+				</div>
+		</div>
+		<!-- Submit Button -->
+		<br>
+		<div class=" row justify-content-center">
+			<button class="btn btn-success" type="submit"> Submit </button>
+		</div>
+	</form>
+
+</main>

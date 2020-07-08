@@ -1,0 +1,16 @@
+body {
+  background-color: lightcyan;
+}
+
+#navbar {
+  margin-bottom: 1rem;
+}
+
+#main {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#upload-signature {
+  margin-top: 1rem;
+}

@@ -1,0 +1,34 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Declaration</th>
+            <th>Created By</th>
+            <th>Award Class</th>
+            <th>Nominee</th>
+            <th>Created On</th>
+            <th>PDF</th>
+            {{#if user.isAdmin}}
+                {{#if showAwardsForAllUsers}}
+                    <th>Delete</th>
+                {{/if}}
+            {{/if}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each awards}}
+            <tr>
+                <td>{{award_declaration}}</td>
+                <td>{{userNameFromId created_by_id}}</td>
+                <td>{{awardClassFromId award_class_id}}</td>
+                <td>{{userNameFromId nominee_user_id}}</td>
+                <td>{{formatDate created_on day="numeric" month="long" year="numeric"}}</td>
+                <td><a href="/print-award/{{id}}" class="btn btn-primary" role="button">PDF</a></td>
+                {{#if ../user.isAdmin}}
+                    {{#if ../showAwardsForAllUsers}}
+                        <td><a href="/delete-award/{{id}}" class="btn btn-danger" role="button">Delete</a></td>
+                    {{/if}}
+                {{/if}}
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

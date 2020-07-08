@@ -1,0 +1,33 @@
+<main role="main" class="container">
+	<div id="navbar">
+		<ul class="navbar-nav mr-auto">
+			 <lh><h2>Reports: Regional Award Counts</h2></lh>
+			 <li class="nav-item dropdown">
+				<a class="nav-link btn-lg dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Select Report</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/companyStatistics">Main</a>
+					<a class="dropdown-item" href="/awardCountsByDept">Award Counts By Department</a>
+					<a class="dropdown-item" href="/awardCountsByRegion">Award Counts By Region</a>
+					<a class="dropdown-item" href="/awardsByDeptSelection">Awards Based On Department Selection</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Region</th>
+					<th scope="col">Award Count</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each stats}}
+					<tr>
+						<th>{{region}}</th>
+						<th>{{awardcount}}</th>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	<div>

@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email Address</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Department</th>
+            <th>Account Type</th>
+            {{#if user.isAdmin}}
+                <th>Reset Password</th>
+            {{/if}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+            <tr>
+                <td>{{username}}</td>
+                <td>{{email}}</td>
+                <td>{{firstname}}</td>
+                <td>{{lastname}}</td>
+                <td>{{departmentNameFromId dept_id}}</td>
+                <td>{{accountTypeFromId account_type}}</td>
+                {{#if ../user.isAdmin}}
+                    <td><a href="/reset-password/{{id}}" class="btn btn-danger" role="button">Reset Password</a></td>
+                {{/if}}
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

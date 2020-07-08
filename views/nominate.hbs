@@ -1,0 +1,28 @@
+<form action="/nominate" method="post">
+    <div>
+        <label for="nominee">Nominee</label>
+        <select name="nominee">
+            {{#each users}}
+                <option value="{{id}}" {{#selected}}selected="selected"{{/selected}}>{{firstname}} {{lastname}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div>
+        <label for="award_class">Award Class</label>
+        <select name="award_class">
+            {{#each award_classes}}
+                <option value="{{id}}" {{#selected}}selected="selected"{{/selected}}>{{title}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div>
+        <label for="declaration">Declaration</label>
+        <textarea class="form-control" rows="5" name="declaration"></textarea>
+    </div>
+    <input type="hidden" name="created_by_id" value="{{user.id}}">
+    <br/>
+    <div>
+        <button class="btn btn-success" type="submit">Submit Nomination</button>
+        <a href="/" class="btn btn-danger" role="button">Cancel</a>
+    </div>
+</form>
