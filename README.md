@@ -1,4 +1,5 @@
-# cs467
+_This was a very fun express-hbs project. The hbs templates are in the view folder_
+_See app.js and db folder for node.js usage_
 
 _In order to run this app you need a file called `.env` in the project root with the required DB and AWS credentials_
 
