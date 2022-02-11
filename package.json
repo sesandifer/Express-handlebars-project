@@ -16,7 +16,7 @@
     "debug": "~2.6.9",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.0",
+    "express-handlebars": "^5.3.1",
     "express-hbs": "^1.0.4",
     "express-session": "^1.15.6",
     "handlebars-intl": "^1.1.2",
